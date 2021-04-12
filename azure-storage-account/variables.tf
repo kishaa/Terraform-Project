@@ -15,7 +15,7 @@ variable "Az-Resource-Tag" {
 
 variable "Az-Storage-Account-Name" {
     type = string
-    default = "pocstorageaccount" 
+    default = "mypocstorageaccount" 
 }
 
 variable "Az-Storage-Account-Kind" {
@@ -36,4 +36,14 @@ variable "Az-Storage-Account-Replication" {
 variable "Az-Account-Access-Type" {
  type = bool
  default = true  
+}
+
+variable "Az-Container-Name" {
+  type = string
+  default = "myblobcontainer"
+}
+
+variable "Az-Container-Access-Type" {
+  type = string
+  default = "private"
 }
