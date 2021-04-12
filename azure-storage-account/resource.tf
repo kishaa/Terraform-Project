@@ -23,3 +23,18 @@ resource "azurerm_storage_account" "az-storage-account" {
       "Project" = var.Az-Resource-Tag
     }
     }
+
+    resource "azurerm_storage_container" "az-storage-container" {
+      name = var.Az-Container-Name
+      storage_account_name = azurerm_storage_account.az-storage-account.name
+      container_access_type = var.Az-Container-Access-Type
+    }
+
+    resource "azurerm_storage_blob" "az-blob" {
+      name = "sample.pdf"
+      storage_account_name = azurerm_storage_account.az-storage-account.name
+      storage_container_name = azurerm_storage_container.az-storage-container.name
+      type = "Block"
+      source = "sample.pdf"
+
+    }
