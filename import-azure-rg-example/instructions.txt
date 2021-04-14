@@ -7,4 +7,4 @@ terraform import <terraform_reference_id> <azure_resource_id>
 if you are trying to import a resource group then belwo would be the command
  terraform import azurerm_resource_group.az-resource-group /subscriptions/#########################/resourceGroups/NetworkWatcherRG
 
-later you need to update that tf file as per your resource.
+Once the resource is imported you could see the changes in .tfstate file. Later you need to update that tf file as per your resource.
