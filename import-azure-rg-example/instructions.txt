@@ -1,0 +1,11 @@
+A command 
+
+terraform import <terraform_reference_id> <azure_resource_id>
+
+ needs to be executed from powershell from the terrafrom directory
+
+if you are trying to import a resource group then belwo would be the command
+ terraform import azurerm_resource_group.az-resource-group /subscriptions/#########################/resourceGroups/NetworkWatcherRG
+
+
+ 
