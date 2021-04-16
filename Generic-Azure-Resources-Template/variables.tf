@@ -26,7 +26,7 @@ variable "SQL-Server-Admin-Password" {
 }
 
 variable "Project-Resource-Location" {
-  type = string
+  type    = string
   default = "canadacentral"
 }
 
@@ -39,22 +39,22 @@ variable "SQL-Development-Database-Name" {
 }
 
 variable "SQL-Server-Collation" {
-  type = string
+  type    = string
   default = "SQL_Latin1_General_CP1_CI_AS"
 }
 
 variable "SQL-Server-License" {
-  type = string
+  type    = string
   default = "LicenseIncluded"
 }
 
 variable "SQL-Database-Size" {
-  type = string
+  type    = string
   default = "20"
 }
 
 variable "SQL-Database-SKU" {
-  type = string
+  type    = string
   default = "S2"
 }
 
@@ -72,20 +72,20 @@ variable "Project-API-WebApps" {
 }
 
 variable "WebApp-ASP-kind" {
-  type = string
+  type    = string
   default = "Linux"
 }
 
 variable "WebApp-ASP-SKU-tier" {
-  type = string
+  type    = string
   default = "Basic"
-  }
+}
 
-  variable "WebApp-ASP-SKU-size" {
-  type = string
+variable "WebApp-ASP-SKU-size" {
+  type    = string
   default = "B1"
-  }
+}
 
-  variable "Project-DNS-Zone" {
-    type = string
-  }
+variable "Project-DNS-Zone" {
+  type = string
+}

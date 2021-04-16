@@ -3,6 +3,6 @@ data "azurerm_resources" "az-resources" {
 }
 data "aws_ami" "aws-ami" {
 
-owners = [ "amazon" ]
+  owners      = ["amazon"]
   most_recent = true
 }

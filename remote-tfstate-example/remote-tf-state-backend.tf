@@ -4,5 +4,5 @@ terraform {
     key    = "./terraform/tf-state"
     region = "ap-south-1"
   }
-  
+
 }

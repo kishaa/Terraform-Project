@@ -1,5 +1,5 @@
 resource "azurerm_resource_group" "azure-rg" {
-  name = var.Project-Resource-Group
+  name     = var.Project-Resource-Group
   location = var.Project-Resource-Location
   tags = {
     ProjectName = var.Project-Name
@@ -8,12 +8,12 @@ resource "azurerm_resource_group" "azure-rg" {
 
 
 resource "azurerm_sql_server" "azure-sql-server" {
-  name = var.Project-SQL-Server
-  location = var.Project-Resource-Location
-  resource_group_name = var.Project-Resource-Group
-  administrator_login = var.SQL-Server-Admin-Username
+  name                         = var.Project-SQL-Server
+  location                     = var.Project-Resource-Location
+  resource_group_name          = var.Project-Resource-Group
+  administrator_login          = var.SQL-Server-Admin-Username
   administrator_login_password = var.SQL-Server-Admin-Password
-  version = var.SQL-Server-Version
+  version                      = var.SQL-Server-Version
   tags = {
     ProjectName = var.Project-Name
     Environment = var.Project-Tags[0]
@@ -22,7 +22,7 @@ resource "azurerm_sql_server" "azure-sql-server" {
 
 resource "azurerm_mssql_database" "azure-sql-db" {
 
-  name = var.SQL-Development-Database-Name
+  name           = var.SQL-Development-Database-Name
   server_id      = azurerm_sql_server.azure-sql-server.id
   collation      = var.SQL-Server-Collation
   license_type   = var.SQL-Server-License
@@ -35,12 +35,12 @@ resource "azurerm_mssql_database" "azure-sql-db" {
     Environment = var.Project-Tags[0]
   }
 }
-  resource "azurerm_app_service_plan" "webappASP" {
-  name = var.Project-Webapp-ASP
-  location = var.Project-Resource-Location
+resource "azurerm_app_service_plan" "webappASP" {
+  name                = var.Project-Webapp-ASP
+  location            = var.Project-Resource-Location
   resource_group_name = var.Project-Resource-Group
-  kind = var.WebApp-ASP-kind
-  reserved = true
+  kind                = var.WebApp-ASP-kind
+  reserved            = true
   sku {
     tier = var.WebApp-ASP-SKU-tier
     size = var.WebApp-ASP-SKU-size
@@ -49,7 +49,7 @@ resource "azurerm_mssql_database" "azure-sql-db" {
     ProjectName = var.Project-Name
     Environment = var.Project-Tags[0]
   }
-  
+
 }
 
 resource "azurerm_app_service" "azurewebapp1" {
@@ -57,7 +57,7 @@ resource "azurerm_app_service" "azurewebapp1" {
   location            = var.Project-Resource-Location
   resource_group_name = var.Project-Resource-Group
   app_service_plan_id = azurerm_app_service_plan.webappASP.id
-  
+
 
   site_config {
     linux_fx_version = "NODE|12.0"
@@ -73,7 +73,7 @@ resource "azurerm_app_service" "azurewebapp2" {
   location            = var.Project-Resource-Location
   resource_group_name = var.Project-Resource-Group
   app_service_plan_id = azurerm_app_service_plan.webappASP.id
-  
+
 
   site_config {
     linux_fx_version = "DOTNETCORE|3.0"
@@ -86,10 +86,10 @@ resource "azurerm_app_service" "azurewebapp2" {
 }
 
 resource "azurerm_dns_zone" "azure-dns" {
-  name = var.Project-DNS-Zone
+  name                = var.Project-DNS-Zone
   location            = var.Project-Resource-Location
   resource_group_name = var.Project-Resource-Group
-  
+
 }
 
 

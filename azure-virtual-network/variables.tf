@@ -29,5 +29,19 @@ variable "Az-Environment-Prefix" {
 variable "Az-VNet-Address-Space" {
   type    = string
   default = "10.30.0.0/16"
+}
 
+variable "Az-IP-Allocation" {
+  type    = string
+  default = "Static"
+}
+
+variable "Az-Public-IP-Version" {
+  type    = string
+  default = "IPv4"
+}
+
+variable "Az-Public-IP-SKU" {
+  type    = string
+  default = "Basic"
 }

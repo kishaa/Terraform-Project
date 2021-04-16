@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     aws = {
-        source = "hashicorp/aws"
+      source = "hashicorp/aws"
     }
   }
 }
@@ -9,5 +9,5 @@ terraform {
 provider "aws" {
   access_key = var.AWS-Access-Key
   secret_key = var.AWS-Secret-Key
-  region = var.AWS-Resource-Region
+  region     = var.AWS-Resource-Region
 }

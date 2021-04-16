@@ -2,14 +2,14 @@
 
 resource "aws_s3_bucket" "example-s3" {
   bucket = var.AWS-S3-Bucket
-  acl = "public-read-write"
+  acl    = "public-read-write"
   versioning {
     enabled = true
   }
 
   lifecycle_rule {
     enabled = true
-    id = "expire_all_files"
+    id      = "expire_all_files"
     expiration {
       date = "2021-04-09"
     }

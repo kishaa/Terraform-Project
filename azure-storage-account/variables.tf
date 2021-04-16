@@ -1,49 +1,49 @@
 variable "Az-Resource-Group-Name" {
-  type = string
+  type    = string
   default = "poc-rg"
 }
 
 variable "Az-Resource-Location" {
-  type = string
+  type    = string
   default = "centralindia"
 }
 
 variable "Az-Resource-Tag" {
-  type = string
+  type    = string
   default = "POC"
 }
 
 variable "Az-Storage-Account-Name" {
-    type = string
-    default = "mypocstorageaccount" 
+  type    = string
+  default = "mypocstorageaccount"
 }
 
 variable "Az-Storage-Account-Kind" {
-  type = string
+  type    = string
   default = "StorageV2"
 }
 
 variable "Az-Storage-Account-Tier" {
-  type = string
+  type    = string
   default = "Standard"
 }
 
 variable "Az-Storage-Account-Replication" {
-  type = string
+  type    = string
   default = "LRS"
 }
 
 variable "Az-Account-Access-Type" {
- type = bool
- default = true  
+  type    = bool
+  default = true
 }
 
 variable "Az-Container-Name" {
-  type = string
+  type    = string
   default = "myblobcontainer"
 }
 
 variable "Az-Container-Access-Type" {
-  type = string
+  type    = string
   default = "private"
 }
